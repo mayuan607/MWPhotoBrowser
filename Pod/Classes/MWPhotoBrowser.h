@@ -41,18 +41,32 @@
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, weak) IBOutlet id<MWPhotoBrowserDelegate> delegate;
+
+/// 图片填充放大
 @property (nonatomic) BOOL zoomPhotosToFill;
+
+/// 是否显示底栏切换箭头
 @property (nonatomic) BOOL displayNavArrows;
+/// 是否显示分享按钮
 @property (nonatomic) BOOL displayActionButton;
+/// 是否显示图片选择按钮
 @property (nonatomic) BOOL displaySelectionButtons;
+/// 是否一直显示控制器（点击图片 不隐藏上下栏）
 @property (nonatomic) BOOL alwaysShowControls;
+/// 网格图片列表 是否可开
 @property (nonatomic) BOOL enableGrid;
+/// 上下滑动关闭（model 控制器）
 @property (nonatomic) BOOL enableSwipeToDismiss;
+/// 开始时就显示 网格图片列表
 @property (nonatomic) BOOL startOnGrid;
+/// 界面显示时是否自动播放视频
 @property (nonatomic) BOOL autoPlayOnAppear;
+/// 延迟隐藏工具栏时间
 @property (nonatomic) NSUInteger delayToHideElements;
+/// 当前index
 @property (nonatomic, readonly) NSUInteger currentIndex;
 
+// 自定义图片选中按钮图片
 // Customise image selection icons as they are the only icons with a colour tint
 // Icon should be located in the app's main bundle
 @property (nonatomic, strong) NSString *customImageSelectedIconName;
@@ -65,7 +79,7 @@
 // Reloads the photo browser and refetches data
 - (void)reloadData;
 
-// Set page that photo browser starts on
+// 设置开始时从哪页显示
 - (void)setCurrentPhotoIndex:(NSUInteger)index;
 
 // Navigation
